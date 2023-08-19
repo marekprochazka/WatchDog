@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "your-project-name"
+version = "0.0.1"
+description = "YOUR_PROJECT_DESCRIPTION"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "your_project_name"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2.4"
+djangorestframework = "^3.14.0"
+django-vite = "^2.1.3"
+django-environ = "^0.10.0"
+psycopg2-binary = "^2.9.7"
+django-werkzeug = "^1.0.0"
+django-extensions = "^3.2.3"
+pytest-factoryboy = "^2.5.1"
+factory-boy = "^3.3.0"
+pytest-django = "^4.5.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "core.settings.test"
+# -- recommended but optional:
+python_files = ["test_*.py", "*_test.py", "testing/python/*.py"]
+pythonpath = ["/app"]
+norecursedirs = "docs *.egg-info .git .tox locale compose *.egg dist node_modules venv {arch}"

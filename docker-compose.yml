@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  django:
+    extends:
+      file: docker-compose.common.yml
+      service: django-local
+    image: watchdog-django
+    build:
+      target: dev
+      dockerfile: ./compose/local/django/Dockerfile
+      args:
+        UID: ${UID:-1000}
+        GID: ${GID:-1000}
+      cache_from:
+        - watchdog-django
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+      - "3000:3000"
+    command: ['start']
+
+
+
