@@ -25,6 +25,9 @@ from django.conf.urls.static import static
 from core.views.example import ExampleView
 
 urlpatterns = [
-                  path('admin/', admin.site.urls),
-                  path('', ExampleView.as_view(), )
-              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path("admin/", admin.site.urls),
+    path(
+        "",
+        ExampleView.as_view(),
+    ),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

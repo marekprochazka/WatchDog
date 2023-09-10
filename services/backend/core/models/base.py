@@ -23,12 +23,12 @@ class BaseModel(models.Model):
         return self.id == other.id
 
     def save(
-            self,
-            force_insert: bool = False,
-            force_update: bool = False,
-            using: str | None = None,
-            update_fields: Iterable[str] | None = None,
-            update_metadata_fields: bool = True,
+        self,
+        force_insert: bool = False,
+        force_update: bool = False,
+        using: str | None = None,
+        update_fields: Iterable[str] | None = None,
+        update_metadata_fields: bool = True,
     ):
         # https://code.djangoproject.com/ticket/30319  , https://code.djangoproject.com/ticket/22981
         fields = update_fields
