@@ -10,7 +10,6 @@
 
 <script setup lang="ts">
 import type {IHelloProps} from "@/components/props";
-import {defineProps} from "vue";
 
 const props = defineProps<IHelloProps>()
 </script>
