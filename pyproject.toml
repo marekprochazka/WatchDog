@@ -32,3 +32,7 @@ DJANGO_SETTINGS_MODULE = "core.settings.test"
 python_files = ["test_*.py", "*_test.py", "testing/python/*.py"]
 pythonpath = ["/app"]
 norecursedirs = "docs *.egg-info .git .tox locale compose *.egg dist node_modules venv {arch}"
+
+[tool.ruff]
+ignore = ['E501', 'F403']
+exclude = ['*/__init__.py']
