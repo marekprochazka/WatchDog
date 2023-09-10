@@ -23,6 +23,13 @@ A 'hacky' solution for SSR vue components that compile entirely into static file
 * for frontend go to `services/frontend` and run `npm i ...`
 
 
+## Formatting
+* ./scripts/format.sh or ./scripts/format.bat
+
+## Linting
+* ./scripts/lint.sh or ./scripts/lint.bat
+
+
 ### enjoy
 
 --- 
