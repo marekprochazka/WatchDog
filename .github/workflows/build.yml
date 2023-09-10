@@ -17,8 +17,11 @@ jobs:
           echo "DATABASE_URL=nope" >> .env
           echo "DJANGO_ALLOWED_HOSTS=*" >> .env
           echo "SECRET_KEY=top_secret" >> .env
-      - name: Build Backend
+      - name: Build
         run: docker compose build
+        with:
+          cache-from: type=registry,ref=user/app:buildcache
+          cache-to: type=registry,ref=user/app:buildcache,mode=max
       - name: Test Backend
         run: docker compose --file docker-compose.test.yml  up
 
