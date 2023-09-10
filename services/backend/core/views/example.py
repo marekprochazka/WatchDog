@@ -1,5 +1,5 @@
 from core.views.base import BaseVueView
-
+from random import randint
 
 class ExampleView(BaseVueView):
     component_name = "hello"
