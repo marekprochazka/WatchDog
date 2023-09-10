@@ -21,4 +21,7 @@ jobs:
         run: docker compose build
       - name: Test Backend
         run: docker compose --file docker-compose.test.yml  up
+      - name: NPM lint
+        run: docker compose run --rm vite npm run lint
+
 
