@@ -3,4 +3,8 @@ from core.views.base import BaseVueView
 
 class ExampleView(BaseVueView):
     component_name = 'hello'
-    component_props = {'msg': 'DJANGO'}
+
+    def get_component_props(self) -> dict:
+        return {
+            'msg': 'Hello World!'
+        }

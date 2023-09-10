@@ -1,5 +1,17 @@
 version: '3.7'
 
+x-app: &default-app
+  env_file:
+    - ".env"
+  restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
+  stop_grace_period: "3s"
+  tty: true
+  healthcheck:
+    interval: "60s"
+    timeout: "3s"
+    start_period: "5s"
+    retries: 3
+
 services:
   django:
     extends:
@@ -18,8 +30,23 @@ services:
       - .env
     ports:
       - "8000:8000"
-      - "3000:3000"
     command: ['start']
+  vite:
+    <<: *default-app
+    build:
+      context: "./services/frontend"
+      target: "development"
+      dockerfile: ../../compose/local/vite/Dockerfile
+      args:
+        - "NODE_ENV=development"
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./services/frontend:/node/app:delegated"
+      - "/node/app/node_modules"
+
+
+
 
 
 

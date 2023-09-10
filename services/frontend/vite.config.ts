@@ -36,5 +36,12 @@ export default defineConfig({
       allow: ['../..'],  // Allow serving files from one level up to the project root
     },
     origin: 'http://localhost:3000',
+    hmr: {
+      host: '0.0.0.0',
+      port: 3000
+    },
+    watch: {
+        usePolling: true,
+      },
   },
 })
