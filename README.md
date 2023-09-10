@@ -29,6 +29,9 @@ A 'hacky' solution for SSR vue components that compile entirely into static file
 ## Linting
 * ./scripts/lint.sh or ./scripts/lint.bat
 
+## BE tests
+* docker compose --file docker-compose.test.yml  up
+
 
 ### enjoy
 
