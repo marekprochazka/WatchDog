@@ -9,6 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: setup .env
+        run: |
+          touch .env
+          echo "VERSION=production" >> .env
+          echo "DEV=False" >> .env
+          echo "DATABASE_URL=nope" >> .env
+          echo "DJANGO_ALLOWED_HOSTS=*" >> .env
+          echo "SECRET_KEY=top_secret" >> .env
       - name: Build Backend
         run: docker compose build
 
@@ -16,6 +24,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: setup .env
+        run: |
+          touch .env
+          echo "VERSION=test" >> .env
+          echo "DEV=True" >> .env
+          echo "DATABASE_URL=nope" >> .env
+          echo "DJANGO_ALLOWED_HOSTS=*" >> .env
+          echo "SECRET_KEY=top_secret" >> .env
       - name: Build Backend
         run: docker compose build
       - name: Run Tests
