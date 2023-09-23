@@ -1,11 +1,15 @@
-import type {IBaseDjangoProps} from "@/types/base";
+import type { IBaseUser } from '@/types/auth'
 
-interface IHelloProps extends IBaseDjangoProps {
+interface IHelloProps  {
   msg: string
 }
 
-interface INewComponentProps extends IBaseDjangoProps {
+interface INewComponentProps{
     hello: string
 }
 
-export type { IHelloProps, INewComponentProps }
+interface IUsersListProps {
+    users: IBaseUser[]
+}
+
+export type { IHelloProps, INewComponentProps, IUsersListProps }

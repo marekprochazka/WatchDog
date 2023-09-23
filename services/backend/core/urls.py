@@ -20,12 +20,16 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from core.views.example import ExampleView
+from core.views.example import ExampleView, UserListExampleView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path(
         "",
         ExampleView.as_view(),
+    ),
+    path(
+        "users/",
+        UserListExampleView.as_view(),
     ),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
