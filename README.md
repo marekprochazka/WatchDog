@@ -3,8 +3,8 @@
 
 <image src="static/logo.png" alt="watchod_logo" style="width: 50%;" />
 
-### How to run the project locally:
-* [Install docker](https://docs.docker.com/engine/install/)
+### How to run the project locally (Windows):
+* [Install docker desktop](https://docs.docker.com/engine/install/)
 * Clone this repository (via [cli](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) or tools such as [github desktop](https://desktop.github.com/) or [gitkraken](https://www.gitkraken.com/))
 * Open project in your favorite IDE
 * In root folder create `.env` file from `.env.example`
@@ -20,10 +20,10 @@
 * for frontend go to `services/frontend` and run `npm i ...`
 
 ### Formatting
-* ./scripts/format.sh or ./scripts/format.bat
+* ./scripts/format or ./scripts/format.bat
 
 ### Linting
-* ./scripts/lint.sh or ./scripts/lint.bat
+* ./scripts/lint or ./scripts/lint.bat
 
 ### BE tests
 * docker compose --file docker-compose.test.yml  up
