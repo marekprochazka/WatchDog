@@ -30,7 +30,7 @@
 
 ### Project description
 
-TBD
+Webscraper controlling prices of (mostly) supplements on various e-shops. The goal is to provide users with the best price for the product they are looking for. The app will also provide price history for each product and more.
 
 ### Technologies used
   * Template: [django-vue-base](https://github.com/marekprochazka/django-vue-base)
